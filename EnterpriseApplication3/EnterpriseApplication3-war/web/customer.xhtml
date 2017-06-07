@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+     xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+          <f:view>
+            <h:form>
+                <p:dataTable value="#{customerView.allCustomers}" var="customer" >                  
+                     <p:column>
+                        <f:facet name="header">Имя</f:facet>
+                        <h:outputText value = "#{customer.name}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Компания</f:facet>
+                        <h:outputText value = "#{customer.company.name}"/>
+                    </p:column>
+                   <p:column>
+                        <f:facet name="header">Количество документов</f:facet>
+                        <h:outputText value = "#{customer.docQuantity}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+                 <h:outputLink value="faces/addCustomer.xhtml">Добавить заказчика</h:outputLink><br></br>
+         </f:view>
+    </h:body>
+</html>
+

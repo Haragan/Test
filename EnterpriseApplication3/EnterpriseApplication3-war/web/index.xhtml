@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="style.css"/> 
+           <style>
+             body {
+    background: url("http://bello-tur.umi.ru/images/cms/thumbs/c513ea8a5f517f47a5fffa527c6db8cfc8ee3f33/main_img_placeholder_960_auto.png") no-repeat;
+    background-position: center;        
+   }
+        </style>
+    </h:head>
+    <h:body>
+         <div class="content">
+          <f:view>
+            <h:form>    
+                Welcome, #{Login.login}
+                <hr></hr>
+                   <div class="wrapper">
+                <h:outputLink value="faces/archive.xhtml">Архив</h:outputLink><br></br>
+                <br></br>
+                <h:outputLink value="faces/company.xhtml">Компания</h:outputLink><br></br>
+                <br></br>
+                <h:outputLink value="faces/customer.xhtml">Заказчик</h:outputLink><br></br>
+                <br></br>
+                <h:outputLink value="faces/document.xhtml">Документ</h:outputLink><br></br>
+                <br></br>
+                <h:outputLink value="faces/gost.xhtml">Госты</h:outputLink><br></br>
+                <br></br>
+                <h:outputLink value="faces/personal.xhtml">Персонал</h:outputLink><br></br>
+                   </div>
+            </h:form>
+         </f:view>
+         </div>
+    </h:body>
+</html>
+

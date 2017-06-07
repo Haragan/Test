@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+          <f:view>
+            <h:form>
+                <p:dataTable value="#{companyView.allCompany}" var="company" >                  
+                     <p:column>
+                        <f:facet name="header">Имя</f:facet>
+                         
+                          <h:outputText value = "#{company.name}"
+                   />
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">Кодовое слово</f:facet>
+                            <h:outputText value = "#{company.codename}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">ИНН</f:facet>
+                            #{company.INN}
+                    </p:column>    
+                    <p:column>
+                        <h:commandButton action="#{companyView.editCompany(company.idCompany)}" value="Edit Company"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+                 <h:outputLink value="faces/addCompany.xhtml">Добавить компанию</h:outputLink><br></br>
+         </f:view>
+    </h:body>
+</html>
+
+
